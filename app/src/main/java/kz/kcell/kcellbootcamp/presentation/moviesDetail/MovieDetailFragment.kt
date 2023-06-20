@@ -14,7 +14,7 @@ import kz.kcell.kcellbootcamp.utils.Constants.ARG_MOVIE_ID
 import kz.kcell.kcellbootcamp.utils.Resource
 import kz.kcell.kcellbootcamp.utils.loadImage
 import kz.kcell.kcellbootcamp.utils.toast
-import java.time.format.DateTimeFormatter
+
 
 @AndroidEntryPoint
 class MovieDetailFragment : Fragment(R.layout.fragment_movie_detail) {
@@ -45,12 +45,19 @@ class MovieDetailFragment : Fragment(R.layout.fragment_movie_detail) {
         }
     }
 
+
     private fun bindMovie(movie: Movie?) = with(binding) {
         movie?.let {
             movieItemTitle.text = movie.title
             detailDesc.text = movie.overview
-           // 12 Dec 1992
-            movieItemRelease.text = movie.releaseDate.format(DateTimeFormatter.ofPattern("dd MMM yyyy")) // "d-M/L-y"
+            // 12 Dec 1992
+           // val formatter = DateTimeFormatterBuilder().appendPattern("dd-MMM-yyyy").toFormatter()
+
+
+//            val formatter = DateTimeFormatter.ofPattern("yyyy MM dd")
+//            val text = movie.releaseDate.format(formatter)
+//            val parsedDate = LocalDate.parse(text, formatter)
+            movieItemRelease.text = movie.releaseDate// "dd-MMM-yyyy"
 
 
             movieItemRatingbar.rating = movie.voteAverage.toFloat()

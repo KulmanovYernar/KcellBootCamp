@@ -5,11 +5,10 @@ import kz.kcell.kcellbootcamp.data.remote.MovieRemoteDataSource
 import kz.kcell.kcellbootcamp.utils.performGetOperation
 import javax.inject.Inject
 
-class MovieRepository @Inject constructor(
+class  MovieRepository @Inject constructor(
     private val remoteDataSource: MovieRemoteDataSource,
     private val localDataSource: MovieDao
 ) {
-
     fun getMovies() = performGetOperation(
         databaseQuery = { localDataSource.getMovies() },
         networkCall = { remoteDataSource.getMovies() },

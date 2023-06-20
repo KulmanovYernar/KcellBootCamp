@@ -1,5 +1,6 @@
 package kz.kcell.kcellbootcamp.presentation.moviesList
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -10,6 +11,8 @@ import kz.kcell.kcellbootcamp.data.entities.Movie
 import kz.kcell.kcellbootcamp.databinding.MovieItemBinding
 import kz.kcell.kcellbootcamp.utils.loadImage
 import kz.kcell.kcellbootcamp.utils.orZero
+import java.time.format.DateTimeFormatter
+
 
 class MoviesAdapter(
     private val onClick: (item: Movie) -> Unit
@@ -36,12 +39,30 @@ class MoviesAdapter(
         private val binding: MovieItemBinding
     ) : RecyclerView.ViewHolder(binding.root) {
 
+        @SuppressLint("SimpleDateFormat")
         fun bind(item: Movie) = with(binding) {
             root.setOnClickListener {
                 onClick.invoke(item)
             }
             movieItemTitle.text = item.title
-            movieItemRelease.text = item.releaseDate
+//            val formatter = DateTimeFormatter.ofPattern("dd MMM uuuu")
+//            val localDateTime = LocalDateTime.parse(item.releaseDate)
+//
+//            val apiDateString = "2023-06-20T10:30:00"
+//
+//// Define the input date format
+//            val inputFormat = DateTimeFormatter.ofPattern("yyyy-mm-dd")
+//
+//// Parse the API date string to a LocalDateTime object
+//            val dateTime = LocalDateTime.parse(item.releaseDate, inputFormat)
+//
+//// Define the desired output format
+//            val outputFormat = DateTimeFormatter.ofPattern("dd-mm-yyyy")
+//
+//// Format the date to the desired format
+//            val formattedDate = dateTime.format(outputFormat)
+
+            movieItemRelease.text = item.releaseDate.format(DateTimeFormatter.ofPattern("dd MMM uuuu"))
             movieItemRatingbar.rating = item.voteAverage.toFloat().orZero()
             movieItemPoster.loadImage(
                 BuildConfig.IMAGE_URL + item.posterPath,

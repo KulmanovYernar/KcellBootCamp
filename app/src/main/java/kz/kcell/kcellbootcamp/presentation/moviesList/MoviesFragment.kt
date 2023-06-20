@@ -1,6 +1,5 @@
 package kz.kcell.kcellbootcamp.presentation.moviesList
 
-import android.icu.lang.UCharacter.VerticalOrientation
 import android.os.Bundle
 import android.view.View
 import androidx.core.os.bundleOf

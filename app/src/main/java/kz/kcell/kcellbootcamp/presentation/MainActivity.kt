@@ -1,16 +1,16 @@
 package kz.kcell.kcellbootcamp.presentation
 
-import androidx.appcompat.app.AppCompatActivity
+import android.Manifest
+import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
-import android.Manifest
-import android.content.pm.PackageManager
-import android.os.Build
 import kz.kcell.kcellbootcamp.R
 import kz.kcell.kcellbootcamp.databinding.ActivityMainBinding
 import kz.kcell.kcellbootcamp.utils.toast
@@ -44,4 +44,10 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
             }
         }
     }
+
+//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+//      menuInflater.inflate(R.menu.menu_items,menu)
+//
+//    }
+//}
 }
