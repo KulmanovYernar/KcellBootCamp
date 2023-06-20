@@ -1,6 +1,7 @@
 package kz.kcell.kcellbootcamp.data.remote
 
-import kz.kcell.kcellbootcamp.BuildConfig
+import com.chuckerteam.chucker.BuildConfig
+//import kz.kcell.kcellbootcamp.BuildConfig
 import javax.inject.Inject
 
 class MovieRemoteDataSource @Inject constructor(

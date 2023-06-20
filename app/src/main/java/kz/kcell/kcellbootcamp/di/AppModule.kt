@@ -1,6 +1,7 @@
 package kz.kcell.kcellbootcamp.di
 
 import android.content.Context
+import com.chuckerteam.chucker.BuildConfig
 import com.chuckerteam.chucker.api.ChuckerCollector
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.google.gson.Gson
