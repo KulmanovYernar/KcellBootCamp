@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/moviesFragment"
         android:name="kz.kcell.kcellbootcamp.presentation.moviesList.MoviesFragment"
-        android:label="movies_fragment"
+        android:label="@string/popular_movies"
         tools:layout="@layout/fragment_movies" >
         <action
             android:id="@+id/action_moviesFragment_to_movieDetailFragment"
@@ -17,6 +17,6 @@
     <fragment
         android:id="@+id/movieDetailFragment"
         android:name="kz.kcell.kcellbootcamp.presentation.moviesDetail.MovieDetailFragment"
-        android:label="movie_detail_fragment"
+        android:label="@string/movie_name"
         tools:layout="@layout/fragment_movie_detail" />
 </navigation>
